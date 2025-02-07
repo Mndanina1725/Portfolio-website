@@ -12,10 +12,15 @@
 <nav>
   <ul>
     <li><a href="#home">Home</a></li>
+    <li><a href="#Programming Languages">Languages</a></li>
     <li><a href="#projects">Projects</a></li>
     <li><a href="#contact">Contact</a></li>
   </ul>
+  <button id="theme-toggle">🌙 </button>
 </nav>
+
+
+
 
 <!-- Home Section -->
 <section id="home" class="hero-section">
@@ -40,6 +45,21 @@
   </div>
 </section>
 
+<!-- Languages section -->
+
+<section class="language-section">
+  <h2 class="section-title">Programming Languages</h2> <!-- Title outside the gray box -->
+  <div class="language-container">
+    <h3>Python : 2 Years of Experience</h3>
+    <h3>Java: 1 year of Experience</h3>
+    <h3>C: 1 year of Experience</h3>
+    <h3>Bash scripting: 1 year of Experience</h3>
+    <h3>Html & Css: 1 year of Experience</h3>
+  </div>
+</section>
+
+
+
 <!-- Projects Section -->
 <section id="projects" class="section">
   <h2>My Projects</h2>
@@ -52,6 +72,12 @@
     <h3>Email System</h3>
     <p>An email system built in Java using the JavaMail API, with a Swing-based GUI and SQLite database.</p>
     <a href="https://github.com/Mndanina1725/Email-System" target="_blank">View on GitHub</a>
+  </div>
+  <div class="project">
+    <h3>Art4Others: Student led Non profit</h3>
+    <p> Build a basic web application for a student led non profit, using html and css and js. I am also the tech lead
+    for that Non profit and run the social medias.</p>
+    <a href="https://github.com/Mndanina1725/art4others" target="_blank">View on Github</a>
   </div>
 </section>
 
@@ -67,6 +93,37 @@
 <footer>
   <p>&copy; 2024 Mack Ndanina. All rights reserved.</p>
 </footer>
+<!-- Footer -->
+
+<!-- JavaScript (Placed Before Closing Body Tag) -->
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const toggleButton = document.getElementById("theme-toggle");
+    const body = document.body;
+
+    // Check Local Storage for User Preference
+    if (localStorage.getItem("theme") === "light") {
+      body.classList.add("light-mode");
+      toggleButton.textContent = "🌙 Switch to Dark Mode";
+    }
+
+    // Toggle Theme on Click
+    toggleButton.addEventListener("click", function () {
+      if (body.classList.contains("light-mode")) {
+        body.classList.remove("light-mode");
+        localStorage.setItem("theme", "dark");
+        toggleButton.textContent = "☀️ Switch to Light Mode";
+      } else {
+        body.classList.add("light-mode");
+        localStorage.setItem("theme", "light");
+        toggleButton.textContent = "🌙 Switch to Dark Mode";
+      }
+    });
+  });
+</script>
+
+
+
 </body>
 </html>
 
